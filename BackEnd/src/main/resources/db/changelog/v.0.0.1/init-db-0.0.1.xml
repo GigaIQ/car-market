@@ -19,7 +19,7 @@
             <column name="password" type="VARCHAR(255)">
                 <constraints nullable="false" unique="false"/>
             </column>
-            <column name="favoriteListings" type="">
+            <column name="listings" type="">
                 <constraints nullable="false" unique="false"/>
             </column>
         </createTable>
@@ -41,19 +41,109 @@
                 <constraints nullable="false" unique="false" foreignKeyName=""/>
                 <!--                ?-->
             </column>
-            <column name="listingDate" type="Date">
+            <column name="listingDate" type="Timestamp">
                 <constraints nullable="false" unique="false" />
             </column>
-            <column name="userId" type="Date">
+            <column name="userId" type="BIGINT">
                 <constraints nullable="false" unique="false" foreignKeyName="user_pkey"/>
                 <!--                ?-->
             </column>
         </createTable>
 
         <createTable tableName="userFavorite">
-
+            <column name="userId" type="BIGINT">
+                <constraints nullable="false" unique="false"/>
+                <!--                ?????-->
+            </column>
+            <column name="listingId" type="BIGINT">
+                <constraints nullable="false" unique="false"/>
+                <!--                ?????-->
+            </column>
         </createTable>
 
+        <createTable tableName="car">
+            <column name="carId" autoIncrement="true" type="BIGINT">
+                <constraints nullable="false" unique="true" primaryKey="true" primaryKeyName="carId_pkey"/>
+                <!--                ?-->
+            </column>
+            <column name="markId" type="BIGINT">
+                <constraints nullable="false" unique="false" foreignKeyName="mark_pkey"/>
+                <!--                ?-->
+            </column>
+            <column name="modelId" type="BIGINT">
+                <constraints nullable="false" unique="false" foreignKeyName="model_pkey"/>
+                <!--                ?-->
+            </column>
+            <column name="gearboxId" type="BIGINT">
+                <constraints nullable="false" unique="false" foreignKeyName="gearbox_pkey"/>
+                <!--                ?-->
+            </column>
+            <column name="transmissionId" type="BIGINT">
+                <constraints nullable="false" unique="false" foreignKeyName="transmission_pkey"/>
+                <!--                ?-->
+            </column>
+            <column name="typeId" type="BIGINT">
+                <constraints nullable="false" unique="false" foreignKeyName="type_pkey"/>
+                <!--                ?-->
+            </column>
+            <column name="distance" type="BIGINT">
+                <constraints nullable="false" unique="false"/>
+                <!--                ?-->
+            </column>
+            <column name="Year" type="INT">
+                <constraints nullable="false" unique="false"/>
+                <!--                ?-->
+            </column>
+            <column name="damage" type="BOOLEAN">
+                <constraints nullable="false" unique="false"/>
+                <!--                ?-->
+            </column>
+        </createTable>
+
+        <createTable tableName="mark">
+            <column name="markId" autoIncrement="true" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="mark_pkey"/>
+            </column>
+            <column name="markName" type="VARCHAR(255)">
+                <constraints nullable="false" unique="false"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="gearbox">
+            <column name="gearboxId" autoIncrement="true" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="gearbox_pkey"/>
+            </column>
+            <column name="gearboxName" type="VARCHAR(255)">
+                <constraints nullable="false" unique="false"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="transmission">
+            <column name="transmissionId" autoIncrement="true" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="transmission_pkey"/>
+            </column>
+            <column name="transmissionName" type="VARCHAR(255)">
+                <constraints nullable="false" unique="false"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="model">
+            <column name="modelId" autoIncrement="true" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="model_pkey"/>
+            </column>
+            <column name="modelName" type="VARCHAR(255)">
+                <constraints nullable="false" unique="false"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="fuelType">
+            <column name="fuelTypeId" autoIncrement="true" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="fuelType_pkey"/>
+            </column>
+            <column name="fuelTypeName" type="VARCHAR(255)">
+                <constraints nullable="false" unique="false"/>
+            </column>
+        </createTable>
 
     </changeSet>
 </databaseChangeLog>
