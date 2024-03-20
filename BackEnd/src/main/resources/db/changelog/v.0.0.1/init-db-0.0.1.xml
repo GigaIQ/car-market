@@ -19,13 +19,10 @@
             <column name="password" type="VARCHAR(255)">
                 <constraints nullable="false" unique="false"/>
             </column>
-            <column name="listings" type="">
-                <constraints nullable="false" unique="false"/>
-            </column>
         </createTable>
 
         <createTable tableName="listing">
-            <column name="listingId" autoIncrement="true" type="BIGINT">
+            <column name="id" autoIncrement="true" type="BIGINT">
                 <constraints nullable="false" primaryKey="true" primaryKeyName="listing_pkey"/>
             </column>
             <column name="title" type="VARCHAR(255)">
@@ -37,113 +34,136 @@
             <column name="price" type="BIGINT">
                 <constraints nullable="false" unique="false"/>
             </column>
-            <column name="car" type="">
-                <constraints nullable="false" unique="false" foreignKeyName=""/>
-                <!--                ?-->
+            <column name="car" type="BIGINT">
+                <constraints nullable="false" unique="false"/>
             </column>
-            <column name="listingDate" type="Timestamp">
-                <constraints nullable="false" unique="false" />
+            <column name="listing_date" type="Timestamp">
+                <constraints nullable="false" unique="false"/>
             </column>
-            <column name="userId" type="BIGINT">
-                <constraints nullable="false" unique="false" foreignKeyName="user_pkey"/>
-                <!--                ?-->
+            <column name="user_id" type="BIGINT">
+                <constraints nullable="false" unique="false"/>
             </column>
         </createTable>
 
-        <createTable tableName="userFavorite">
-            <column name="userId" type="BIGINT">
+        <createTable tableName="user_favorite">
+            <column name="user_id" type="BIGINT">
                 <constraints nullable="false" unique="false"/>
-                <!--                ?????-->
             </column>
-            <column name="listingId" type="BIGINT">
+            <column name="listing_id" type="BIGINT">
                 <constraints nullable="false" unique="false"/>
-                <!--                ?????-->
             </column>
         </createTable>
 
         <createTable tableName="car">
-            <column name="carId" autoIncrement="true" type="BIGINT">
-                <constraints nullable="false" unique="true" primaryKey="true" primaryKeyName="carId_pkey"/>
-                <!--                ?-->
+            <column name="id" autoIncrement="true" type="BIGINT">
+                <constraints nullable="false" unique="true" primaryKey="true" primaryKeyName="car_id_pkey"/>
             </column>
-            <column name="markId" type="BIGINT">
-                <constraints nullable="false" unique="false" foreignKeyName="mark_pkey"/>
-                <!--                ?-->
+            <column name="mark_id" type="BIGINT">
+                <constraints nullable="false" unique="false"/>
             </column>
-            <column name="modelId" type="BIGINT">
-                <constraints nullable="false" unique="false" foreignKeyName="model_pkey"/>
-                <!--                ?-->
+            <column name="model_id" type="BIGINT">
+                <constraints nullable="false" unique="false"/>
             </column>
-            <column name="gearboxId" type="BIGINT">
-                <constraints nullable="false" unique="false" foreignKeyName="gearbox_pkey"/>
-                <!--                ?-->
+            <column name="gearbox_id" type="BIGINT">
+                <constraints nullable="false" unique="false"/>
             </column>
-            <column name="transmissionId" type="BIGINT">
-                <constraints nullable="false" unique="false" foreignKeyName="transmission_pkey"/>
-                <!--                ?-->
+            <column name="transmission_id" type="BIGINT">
+                <constraints nullable="false" unique="false"/>
             </column>
-            <column name="typeId" type="BIGINT">
-                <constraints nullable="false" unique="false" foreignKeyName="type_pkey"/>
-                <!--                ?-->
+            <column name="fuel_type_id" type="BIGINT">
+                <constraints nullable="false" unique="false"/>
             </column>
             <column name="distance" type="BIGINT">
                 <constraints nullable="false" unique="false"/>
-                <!--                ?-->
             </column>
-            <column name="Year" type="INT">
+            <column name="year" type="INT">
                 <constraints nullable="false" unique="false"/>
-                <!--                ?-->
             </column>
             <column name="damage" type="BOOLEAN">
                 <constraints nullable="false" unique="false"/>
-                <!--                ?-->
             </column>
         </createTable>
 
         <createTable tableName="mark">
-            <column name="markId" autoIncrement="true" type="BIGINT">
+            <column name="id" autoIncrement="true" type="BIGINT">
                 <constraints nullable="false" primaryKey="true" primaryKeyName="mark_pkey"/>
             </column>
-            <column name="markName" type="VARCHAR(255)">
+            <column name="mark_name" type="VARCHAR(255)">
                 <constraints nullable="false" unique="false"/>
             </column>
         </createTable>
 
         <createTable tableName="gearbox">
-            <column name="gearboxId" autoIncrement="true" type="BIGINT">
+            <column name="id" autoIncrement="true" type="BIGINT">
                 <constraints nullable="false" primaryKey="true" primaryKeyName="gearbox_pkey"/>
             </column>
-            <column name="gearboxName" type="VARCHAR(255)">
+            <column name="gearbox_name" type="VARCHAR(255)">
                 <constraints nullable="false" unique="false"/>
             </column>
         </createTable>
 
         <createTable tableName="transmission">
-            <column name="transmissionId" autoIncrement="true" type="BIGINT">
+            <column name="id" autoIncrement="true" type="BIGINT">
                 <constraints nullable="false" primaryKey="true" primaryKeyName="transmission_pkey"/>
             </column>
-            <column name="transmissionName" type="VARCHAR(255)">
+            <column name="transmission_name" type="VARCHAR(255)">
                 <constraints nullable="false" unique="false"/>
             </column>
         </createTable>
 
         <createTable tableName="model">
-            <column name="modelId" autoIncrement="true" type="BIGINT">
+            <column name="id" autoIncrement="true" type="BIGINT">
                 <constraints nullable="false" primaryKey="true" primaryKeyName="model_pkey"/>
             </column>
-            <column name="modelName" type="VARCHAR(255)">
+            <column name="model_name" type="VARCHAR(255)">
                 <constraints nullable="false" unique="false"/>
             </column>
         </createTable>
 
-        <createTable tableName="fuelType">
-            <column name="fuelTypeId" autoIncrement="true" type="BIGINT">
-                <constraints nullable="false" primaryKey="true" primaryKeyName="fuelType_pkey"/>
+        <createTable tableName="fuel_type">
+            <column name="id" autoIncrement="true" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="fuel_type_pkey"/>
             </column>
-            <column name="fuelTypeName" type="VARCHAR(255)">
+            <column name="fuel_type_name" type="VARCHAR(255)">
                 <constraints nullable="false" unique="false"/>
             </column>
         </createTable>
+
+
+        <addForeignKeyConstraint baseColumnNames="car" baseTableName="listing"
+                                 constraintName="fk_listing_car" deferrable="false"
+                                 initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION"
+                                 referencedColumnNames="id" referencedTableName="car" validate="true"/>
+
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="listing"
+                                 constraintName="fk_listing_user" deferrable="false"
+                                 initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION"
+                                 referencedColumnNames="id" referencedTableName="user" validate="true"/>
+
+        <addForeignKeyConstraint baseColumnNames="mark_id" baseTableName="car"
+                                 constraintName="fk_car_mark" deferrable="false"
+                                 initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION"
+                                 referencedColumnNames="id" referencedTableName="mark" validate="true"/>
+
+        <addForeignKeyConstraint baseColumnNames="gearbox_id" baseTableName="car"
+                                 constraintName="fk_car_gearbox" deferrable="false"
+                                 initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION"
+                                 referencedColumnNames="id" referencedTableName="gearbox" validate="true"/>
+
+        <addForeignKeyConstraint baseColumnNames="transmission_id" baseTableName="car"
+                                 constraintName="fk_car_transmission" deferrable="false"
+                                 initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION"
+                                 referencedColumnNames="id" referencedTableName="transmission" validate="true"/>
+
+        <addForeignKeyConstraint baseColumnNames="model_id" baseTableName="car"
+                                 constraintName="fk_car_model" deferrable="false"
+                                 initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION"
+                                 referencedColumnNames="id" referencedTableName="model" validate="true"/>
+
+        <addForeignKeyConstraint baseColumnNames="fuel_type_id" baseTableName="car"
+                                 constraintName="fk_car_fuel" deferrable="false"
+                                 initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION"
+                                 referencedColumnNames="id" referencedTableName="fuel_type" validate="true"/>
 
     </changeSet>
 </databaseChangeLog>
