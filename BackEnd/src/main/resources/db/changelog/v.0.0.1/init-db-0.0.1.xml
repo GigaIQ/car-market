@@ -115,6 +115,9 @@
             <column name="id" autoIncrement="true" type="BIGINT">
                 <constraints nullable="false" primaryKey="true" primaryKeyName="model_pkey"/>
             </column>
+            <column name="mark_id" autoIncrement="true" type="BIGINT">
+                <constraints nullable="false" unique="false" />
+            </column>
             <column name="model_name" type="VARCHAR(255)">
                 <constraints nullable="false" unique="false"/>
             </column>
@@ -160,10 +163,16 @@
                                  initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION"
                                  referencedColumnNames="id" referencedTableName="model" validate="true"/>
 
+        <addForeignKeyConstraint baseColumnNames="mark_id" baseTableName="model"
+                                 constraintName="fk_mark" deferrable="false"
+                                 initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION"
+                                 referencedColumnNames="id" referencedTableName="mark" validate="true"/>
+
         <addForeignKeyConstraint baseColumnNames="fuel_type_id" baseTableName="car"
                                  constraintName="fk_car_fuel" deferrable="false"
                                  initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION"
                                  referencedColumnNames="id" referencedTableName="fuel_type" validate="true"/>
+
 
     </changeSet>
 </databaseChangeLog>

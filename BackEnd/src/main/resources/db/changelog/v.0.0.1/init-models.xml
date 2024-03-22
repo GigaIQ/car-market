@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="3" author="artem">
+        <insert tableName="model">
+            <column name="id" value="1"/>
+            <column name="mark_id" value="1"/>
+            <column name="model_name" value="INTEGRA"/>
+        </insert>
+        <insert tableName="model">
+            <column name="id" value="2"/>
+            <column name="mark_id" value="2"/>
+            <column name="model_name" value="HACHIROKU"/>
+        </insert>
+        <insert tableName="model">
+            <column name="id" value="3"/>
+            <column name="mark_id" value="2"/>
+            <column name="model_name" value="HONDA"/>
+        </insert>
+        <insert tableName="model">
+            <column name="id" value="4"/>
+            <column name="model_name" value="NISSAN"/>
+        </insert>
+        <insert tableName="model">
+            <column name="id" value="5"/>
+            <column name="model_name" value="MITSUBISHI"/>
+        </insert>
+        <insert tableName="model">
+            <column name="id" value="6"/>
+            <column name="model_name" value="FORD"/>
+        </insert>
+        <insert tableName="model">
+            <column name="id" value="7"/>
+            <column name="model_name" value="DODGE"/>
+        </insert>
+        <insert tableName="model">
+            <column name="id" value="8"/>
+            <column name="model_name" value="MAZDA"/>
+        </insert>
+        <insert tableName="model">
+            <column name="id" value="9"/>
+            <column name="model_name" value="LADA"/>
+        </insert>
+        <insert tableName="model">
+            <column name="id" value="10"/>
+            <column name="model_name" value="BMW"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

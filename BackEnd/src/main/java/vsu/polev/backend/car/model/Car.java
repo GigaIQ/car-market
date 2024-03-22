@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Data;
 import vsu.polev.backend.fuel_type.model.FuelType;
 import vsu.polev.backend.gearbox.model.Gearbox;
+import vsu.polev.backend.mark.model.Mark;
+import vsu.polev.backend.transmission.model.Transmission;
 
 @Data
 @Entity
@@ -21,4 +23,12 @@ public class Car {
     @ManyToOne
     @JoinColumn(name = "fuel_type_id", referencedColumnName = "id")
     private FuelType fuelType;
+
+    @ManyToOne
+    @JoinColumn(name = "transmission_id", referencedColumnName = "id")
+    private Transmission transmission;
+
+    @OneToOne
+    @JoinColumn(name = "mark_id", referencedColumnName = "id")
+    private Mark mark;
 }
