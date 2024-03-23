@@ -4,7 +4,9 @@ import jakarta.persistence.*;
 import lombok.Data;
 import vsu.polev.backend.fuel_type.model.FuelType;
 import vsu.polev.backend.gearbox.model.Gearbox;
+import vsu.polev.backend.listing.model.Listing;
 import vsu.polev.backend.mark.model.Mark;
+import vsu.polev.backend.model.model.Model;
 import vsu.polev.backend.transmission.model.Transmission;
 
 @Data
@@ -31,4 +33,20 @@ public class Car {
     @OneToOne
     @JoinColumn(name = "mark_id", referencedColumnName = "id")
     private Mark mark;
+
+    @ManyToOne
+    @JoinColumn(name = "model_id", referencedColumnName = "id")
+    private Model model;
+
+    @Column(name = "distance")
+    private Long distance;
+
+    @Column(name = "year")
+    private Integer year;
+
+    @Column(name = "damage")
+    private boolean damage;
+
+    @OneToOne(mappedBy = "car")
+    private Listing listing;
 }

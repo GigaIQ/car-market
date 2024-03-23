@@ -34,7 +34,7 @@
             <column name="price" type="BIGINT">
                 <constraints nullable="false" unique="false"/>
             </column>
-            <column name="car" type="BIGINT">
+            <column name="car_id" type="BIGINT">
                 <constraints nullable="false" unique="false"/>
             </column>
             <column name="listing_date" type="Timestamp">
@@ -43,9 +43,15 @@
             <column name="user_id" type="BIGINT">
                 <constraints nullable="false" unique="false"/>
             </column>
+            <column name="listing_images" type="VARCHAR">
+                <constraints nullable="false" unique="false"/>
+            </column>
         </createTable>
 
         <createTable tableName="user_favorite">
+            <column name="id" autoIncrement="true" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="user_favorite_pkey"/>
+            </column>
             <column name="user_id" type="BIGINT">
                 <constraints nullable="false" unique="false"/>
             </column>
@@ -115,7 +121,7 @@
             <column name="id" autoIncrement="true" type="BIGINT">
                 <constraints nullable="false" primaryKey="true" primaryKeyName="model_pkey"/>
             </column>
-            <column name="mark_id" autoIncrement="true" type="BIGINT">
+            <column name="mark_id" type="BIGINT">
                 <constraints nullable="false" unique="false" />
             </column>
             <column name="model_name" type="VARCHAR(255)">
@@ -132,8 +138,7 @@
             </column>
         </createTable>
 
-
-        <addForeignKeyConstraint baseColumnNames="car" baseTableName="listing"
+        <addForeignKeyConstraint baseColumnNames="car_id" baseTableName="listing"
                                  constraintName="fk_listing_car" deferrable="false"
                                  initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION"
                                  referencedColumnNames="id" referencedTableName="car" validate="true"/>
@@ -172,6 +177,17 @@
                                  constraintName="fk_car_fuel" deferrable="false"
                                  initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION"
                                  referencedColumnNames="id" referencedTableName="fuel_type" validate="true"/>
+
+
+<!--        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="user_favorite"-->
+<!--                                 constraintName="fk_user_favorite" deferrable="false"-->
+<!--                                 initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION"-->
+<!--                                 referencedColumnNames="id" referencedTableName="user" validate="true"/>-->
+
+<!--        <addForeignKeyConstraint baseColumnNames="listing_id" baseTableName="user_favorite"-->
+<!--                                 constraintName="fk_listing_favorite" deferrable="false"-->
+<!--                                 initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION"-->
+<!--                                 referencedColumnNames="id" referencedTableName="listing" validate="true"/>-->
 
 
     </changeSet>

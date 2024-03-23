@@ -17,36 +17,43 @@
         </insert>
         <insert tableName="model">
             <column name="id" value="3"/>
-            <column name="mark_id" value="2"/>
-            <column name="model_name" value="HONDA"/>
+            <column name="mark_id" value="3"/>
+            <column name="model_name" value="CIVIC"/>
         </insert>
         <insert tableName="model">
             <column name="id" value="4"/>
-            <column name="model_name" value="NISSAN"/>
+            <column name="mark_id" value="4"/>
+            <column name="model_name" value="GTR"/>
         </insert>
         <insert tableName="model">
             <column name="id" value="5"/>
-            <column name="model_name" value="MITSUBISHI"/>
+            <column name="mark_id" value="5"/>
+            <column name="model_name" value="LANCER"/>
         </insert>
         <insert tableName="model">
             <column name="id" value="6"/>
-            <column name="model_name" value="FORD"/>
+            <column name="mark_id" value="6"/>
+            <column name="model_name" value="RS200"/>
         </insert>
         <insert tableName="model">
             <column name="id" value="7"/>
-            <column name="model_name" value="DODGE"/>
+            <column name="mark_id" value="7"/>
+            <column name="model_name" value="CHARGER"/>
         </insert>
         <insert tableName="model">
+            <column name="mark_id" value="8"/>
             <column name="id" value="8"/>
-            <column name="model_name" value="MAZDA"/>
+            <column name="model_name" value="FD30"/>
         </insert>
         <insert tableName="model">
+            <column name="mark_id" value="9"/>
             <column name="id" value="9"/>
-            <column name="model_name" value="LADA"/>
+            <column name="model_name" value="VESTA"/>
         </insert>
         <insert tableName="model">
             <column name="id" value="10"/>
-            <column name="model_name" value="BMW"/>
+            <column name="mark_id" value="10"/>
+            <column name="model_name" value="X5M"/>
         </insert>
     </changeSet>
 </databaseChangeLog>

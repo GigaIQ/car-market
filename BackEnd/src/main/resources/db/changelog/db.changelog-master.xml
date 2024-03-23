@@ -5,4 +5,5 @@
                    https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
     <include file="v.0.0.1/init-db-0.0.1.xml" relativeToChangelogFile="true"/>
     <include file="v.0.0.1/init-marks.xml" relativeToChangelogFile="true"/>
+    <include file="v.0.0.1/init-models.xml" relativeToChangelogFile="true"/>
 </databaseChangeLog>
