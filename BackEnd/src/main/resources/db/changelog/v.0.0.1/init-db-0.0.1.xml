@@ -6,9 +6,9 @@
 
     <changeSet id="1" author="artem">
 
-        <createTable tableName="user">
+        <createTable tableName="users">
             <column name="id" autoIncrement="true" type="BIGINT">
-                <constraints nullable="false" primaryKey="true" primaryKeyName="user_pkey"/>
+                <constraints nullable="false" primaryKey="true" primaryKeyName="users_pkey"/>
             </column>
             <column name="login" type="VARCHAR(255)">
                 <constraints nullable="false" unique="true"/>
@@ -146,7 +146,7 @@
         <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="listing"
                                  constraintName="fk_listing_user" deferrable="false"
                                  initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION"
-                                 referencedColumnNames="id" referencedTableName="user" validate="true"/>
+                                 referencedColumnNames="id" referencedTableName="users" validate="true"/>
 
         <addForeignKeyConstraint baseColumnNames="mark_id" baseTableName="car"
                                  constraintName="fk_car_mark" deferrable="false"
